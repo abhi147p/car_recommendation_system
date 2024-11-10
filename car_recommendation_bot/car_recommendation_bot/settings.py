@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "chatbot"
+    "chatbot",
 ]
 
 MIDDLEWARE = [
@@ -118,7 +119,12 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+ALLOWED_HOSTS = ['carrecommend-bdhdgtemaubtgqae.uaenorth-01.azurewebsites.net', '127.0.0.1']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+OPEN_AI_KEY = "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"

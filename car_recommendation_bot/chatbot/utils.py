@@ -1,13 +1,14 @@
 # chatbot/utils.py
 import openai
 import requests
+from django.conf import settings
 
-openai.api_key = 'YOUR_OPENAI_API_KEY'
+openai.api_key = settings.OPEN_AI_KEY
 
 def get_recommendations(user_input):
-    # GPT-3 API call to generate recommendation
+    # GPT-4 API call to generate recommendation
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        model="gpt-4",
         prompt=f"Suggest a car based on the following preferences: {user_input}",
         max_tokens=150
     )
